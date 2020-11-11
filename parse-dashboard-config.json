@@ -1,0 +1,19 @@
+{
+  "apps": [
+    {
+      "serverURL": "https://app.DOMAIN/parse",
+      "appId": "APP_ID",
+      "masterKey": "MASTER_KEY",
+      "appName": "APP_NAME",
+      "iconName": "MyAppIcon.png",
+      "supportedPushLocales": ["en", "ru", "fr"]
+    }
+  ],
+
+  "users": [
+      {
+           "user":"admin",
+           "pass":"PASS"
+      }
+  ]
+}
