@@ -62,8 +62,8 @@ echo
 tput setaf 2; echo 'Downloading Parse Server Dashboard Configrtion Files';
 sleep 2;
 
-sudo curl https://raw.githubusercontent.com/bajpangosh/Install-Parse-Server-on-Ubuntu/master/ubuntu-18.04/parse-dashboard-config.json > parse-dashboard-config.json
-sudo curl https://raw.githubusercontent.com/bajpangosh/Install-Parse-Server-on-Ubuntu/master/ubuntu-18.04/dashboard-running.json > dashboard-running.json
+sudo curl https://raw.githubusercontent.com/qododev/qodo_parse/master/parse-dashboard-config.json > parse-dashboard-config.json
+sudo curl https://raw.githubusercontent.com/qododev/qodo_parse/master/dashboard-running.json > dashboard-running.json
 npm -g install
 echo
 tput setaf 2; echo 'Adding APP_ID and MASTER_KEY';
