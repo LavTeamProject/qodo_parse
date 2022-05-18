@@ -12,7 +12,7 @@ tput setaf 2; echo 'installing Node Js and Nginx Server';
 sleep 2;
 tput sgr0
 apt-get update
-apt install git
+apt install -y git curl mc
 curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 sudo apt-get install -y nodejs pwgen nginx
 
@@ -20,25 +20,25 @@ tput setaf 2; echo "Sit back and relax :) ......"
 sleep 2;
 tput sgr0
 cd /etc/nginx/sites-available/
-sudo wget -O "application.$DOMAIN" https://goo.gl/2H3uGq
+sudo wget -O "application.$DOMAIN" https://raw.githubusercontent.com/LavTeamProject/qodo_parse/main/app.domain.conf
 sudo sed -i -e "s/app.example.com/application.$DOMAIN/" "application.$DOMAIN"
 
-sudo wget -O "dashboard.$DOMAIN" https://goo.gl/VZhPLP
+sudo wget -O "dashboard.$DOMAIN" https://raw.githubusercontent.com/LavTeamProject/qodo_parse/main/dash.domain.conf
 sudo sed -i -e "s/dash.example.com/dashboard.$DOMAIN/" "dashboard.$DOMAIN"
 
 sudo ln -s /etc/nginx/sites-available/"application.$DOMAIN" /etc/nginx/sites-enabled/
 sudo ln -s /etc/nginx/sites-available/"dashboard.$DOMAIN" /etc/nginx/sites-enabled/
 
-tput setaf 2; echo "Setting up Cloudflare FULL SSL"
-sleep 2;
-tput sgr0
-sudo mkdir /etc/nginx/ssl
-sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/nginx/ssl/nginx.key -out /etc/nginx/ssl/nginx.crt
-sudo openssl dhparam -out /etc/nginx/ssl/dhparam.pem 2048
-cd /etc/nginx/
-sudo mv nginx.conf nginx.conf.backup
-sudo wget -O nginx.conf https://goo.gl/7UBeQS
-sudo systemctl reload nginx
+# tput setaf 2; echo "Setting up Cloudflare FULL SSL"
+# sleep 2;
+# tput sgr0
+# sudo mkdir /etc/nginx/ssl
+# sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/nginx/ssl/nginx.key -out /etc/nginx/ssl/nginx.crt
+# sudo openssl dhparam -out /etc/nginx/ssl/dhparam.pem 2048
+# cd /etc/nginx/
+# sudo mv nginx.conf nginx.conf.backup
+# sudo wget -O nginx.conf https://goo.gl/7UBeQS
+# sudo systemctl reload nginx
 
 tput setaf 2; echo 'installing Mongo DB';
 sleep 2;
