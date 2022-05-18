@@ -20,14 +20,14 @@ tput setaf 2; echo "Sit back and relax :) ......"
 sleep 2;
 tput sgr0
 cd /etc/nginx/sites-available/
-sudo wget -O "app.$DOMAIN" https://goo.gl/2H3uGq
-sudo sed -i -e "s/app.example.com/app.$DOMAIN/" "app.$DOMAIN"
+sudo wget -O "application.$DOMAIN" https://goo.gl/2H3uGq
+sudo sed -i -e "s/app.example.com/application.$DOMAIN/" "application.$DOMAIN"
 
-sudo wget -O "dash.$DOMAIN" https://goo.gl/VZhPLP
-sudo sed -i -e "s/dash.example.com/dash.$DOMAIN/" "dash.$DOMAIN"
+sudo wget -O "dashboard.$DOMAIN" https://goo.gl/VZhPLP
+sudo sed -i -e "s/dash.example.com/dashboard.$DOMAIN/" "dashboard.$DOMAIN"
 
-sudo ln -s /etc/nginx/sites-available/"app.$DOMAIN" /etc/nginx/sites-enabled/
-sudo ln -s /etc/nginx/sites-available/"dash.$DOMAIN" /etc/nginx/sites-enabled/
+sudo ln -s /etc/nginx/sites-available/"application.$DOMAIN" /etc/nginx/sites-enabled/
+sudo ln -s /etc/nginx/sites-available/"dashboard.$DOMAIN" /etc/nginx/sites-enabled/
 
 tput setaf 2; echo "Setting up Cloudflare FULL SSL"
 sleep 2;
@@ -96,8 +96,8 @@ echo "APP_ID:   $APP_ID"
 echo
 echo "MASTER_KEY:   $MASTER_KEY"
 echo
-echo "App:        https://app.$DOMAIN"
-echo "Dashboard:  https://dash.$DOMAIN"
+echo "App:        https://application.$DOMAIN"
+echo "Dashboard:  https://dashboard.$DOMAIN"
 echo
 echo "Username:   admin"
 echo "Password:   $PASS"
