@@ -57,7 +57,7 @@ sleep 2;
 tput sgr0
 git clone https://github.com/ParsePlatform/parse-server-example.git $APP_NAME
 cd $APP_NAME
-npm install -g parse-server mongodb-runner parse-dashboard pm2@latest --no-optional --no-shrinkwrap
+npm install -g parse-server mongodb-runner parse-dashboard pm2@latest --no-optional --no-shrinkwrap --verbose
 echo
 tput setaf 2; echo 'Downloading Parse Server Dashboard Configrtion Files';
 sleep 2;
